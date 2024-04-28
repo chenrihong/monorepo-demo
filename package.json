@@ -1,0 +1,25 @@
+{
+  "name": "hrp",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "pnpm -C packages/hrp-web dev",
+    "build": "pnpm -C packages/hrp-web build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
+  },
+  "dependencies": {
+    "vue": "^3.4.25",
+    "element-plus": "2.4.4"
+  }
+}
