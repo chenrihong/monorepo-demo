@@ -13,6 +13,10 @@
 pnpm install typescript -D -w
 ```
 
+### 如何在子项目中命名用全局依赖
+
+直接引用就行，不需要在 package.json中声明依赖
+
 ## 局部依赖
 
 对于某些依赖，可能仅存在于某几个 package 中，我们就可以单独为他们安装，当然，可以通过cd packges/xxx后，执行pnpm install xxx，但这样重复操作多次未免有些麻烦，pnpm 提供了一个快捷指令——filter
@@ -25,17 +29,12 @@ pnpm install vue -r --filter @hrp/web
 
 在 monorepo 中，我们往往需要 package 间的引用，比如本例中的@hrp/tools就会被@hrp/server和@hrp/web依赖。
  
+先在项目hrp-web中添加依赖，再运行 pnpm i
 
  ```
- pnpm i @hrp/tools -r --filter @hrp/server @hrp/web
- ```
-
- 先在项目hrp-web中添加依赖，再运行 pnpm i
-
- ```
-
  "dependencies": {
     "vue": "^3.4.21",
     "@thothinfo/hrp-ui": "workspace:^1.0.0"
   },
  ```
+
